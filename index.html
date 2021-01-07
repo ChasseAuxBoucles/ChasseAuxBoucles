@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css"></link>
+  <title>Chasse aux boucles</title>
+  <script>
+    function affiche_contenu(a) {
+      var cible = document.getElementById(a);
+      if(cible.style.display != '') {
+        cible.style.display = '';
+      } else {
+        cible.style.display = 'none';
+      }
+    }
+    function verif(a, b, c, d, e){
+        if (document.getElementById(a).value == b){
+            document.getElementById(c).style.display = "";
+            document.getElementById(c).textContent = "Vraie !";
+            document.getElementById(d).style.display = '';
+            document.getElementById(e).style.display = '';
+            document.getElementById(a).style.filter = "blur(9px)";
+        }
+        else{
+            document.getElementById(c).style.display = "";
+            document.getElementById(c).textContent = "Faux !"
+            document.getElementById(c).style.display = '';
+        }
+    }
+  </script>
+
+</head>
+<body>
+    <!-- 4875 -->
+    <h1 class="titre">La chasse aux boucles</h1>
+    <h1 class="sous-titre">Le but est de trouver les numéros et de les entrées dans les cases correspondantes. Des indices pour chaque numéro est mis à disposition s'il y a besion. Il interdit, dans un élan de rage, de rentrer des chiffres au hasard jusqu'à tomber sur le bon.</h1>
+    <h1 class="sous-titre">Il ne me reste plus qu'à te souhaiter : bonne chance. Et surtout amuse toi bien, c'est le but.</h1>
+  <div class="numero1">
+    <span class="titre1">Premier</span>
+    <span class="titre1">Numéro :</span> 
+    <input class="input1" maxlength="1" id="input1"></input> 
+    <button class="check1" onclick="verif('input1',4,'vraifaux1','numero2','indice2')" style="position: absolute; left: 110px; top: 620px"><img style=" height: 50px; max-width: auto; padding: 0px; margin: 0px; " src="img/check.png"></img></button>
+    <h1 id="vraifaux1" style="display: none; color: #610B38; margin-top: 65px;"></h1>
+  </div>
+  <button class="indice1" onclick="affiche_contenu('indice1')"><img style="height: 50px; max-width: auto; padding: 0px; margin: 0px;" src="img/ampoule.png"></img></button>
+  <h1 id="indice1" style="display: none; position: absolute; top: 790px; left: 130px; font-size: 30px; font-weight: normal; color: #F6CEE3;">test indice</h1>
+
+
+
+  <div class="numero2" id="numero2" style="display: none;">
+    <span class="titre2">Deuxième</span>
+    <span class="titre2">Numéro :</span> 
+    <input class="input2" maxlength="1" id="input2"></input> 
+    <button class="check2" onclick="verif('input2',8,'vraifaux2','numero3','indice3')" style="position: absolute; left: 110px; top: 1090px"><img style=" height: 50px; max-width: auto; padding: 0px; margin: 0px; " src="img/check.png"></img></button>
+    <h1 id="vraifaux2" style="display: none; color: #610B38; margin-top: 65px;"></h1>
+  </div>
+  <button class="indice2" onclick="affiche_contenu('text_indice2')" style="display: none;" id="indice2"><img style="height: 50px; max-width: auto; padding: 0px; margin: 0px;" src="img/ampoule.png"></img></button>
+  <h1 id="text_indice2" style="display: none; position: absolute; top: 1260px; left: 130px; font-size: 30px; font-weight: normal; color: #F6CEE3;">test indice</h1>
+
+
+
+  <div class="numero3" id="numero3" style="display: none;">
+    <span class="titre3">Troisième</span>
+    <span class="titre3">Numéro :</span> 
+    <input class="input3" maxlength="1" id="input3"></input> 
+    <button class="check3" onclick="verif('input3',7,'vraifaux3','numero4','indice4')" style="position: absolute; left: 110px; top: 1560px"><img style=" height: 50px; max-width: auto; padding: 0px; margin: 0px; " src="img/check.png"></img></button>
+    <h1 id="vraifaux3" style="display: none; color: #610B38; margin-top: 65px;"></h1>
+  </div>
+  <button class="indice3" onclick="affiche_contenu('text_indice3')" style="display: none;" id="indice3"><img style="height: 50px; max-width: auto; padding: 0px; margin: 0px;" src="img/ampoule.png"></img></button>
+  <h1 id="text_indice3" style="display: none; position: absolute; top: 1730px; left: 130px; font-size: 30px; font-weight: normal; color: #F6CEE3;">test indice</h1>
+
+
+  <div class="numero4" id="numero4" style="display: none;">
+    <span class="titre4">Quatrième</span>
+    <span class="titre4">Numéro :</span> 
+    <input class="input4" maxlength="1" id="input4"></input> 
+    <button class="check4" onclick="verif('input4',5,'vraifaux4','bravo','coffre')" style="position: absolute; left: 110px; top: 2030px"><img style=" height: 50px; max-width: auto; padding: 0px; margin: 0px; " src="img/check.png"></img></button>
+    <h1 id="vraifaux4" style="display: none; color: #610B38; margin-top: 65px;"></h1>
+  </div>
+  <button class="indice4" onclick="affiche_contenu('text_indice4')" style="display: none;" id="indice4"><img style="height: 50px; max-width: auto; padding: 0px; margin: 0px;" src="img/ampoule.png"></img></button>
+  <h1 id="text_indice4" style="display: none; position: absolute; top: 2200px; left: 130px; font-size: 30px; font-weight: normal; color: #F6CEE3;">test indice</h1>
+
+  <h1 style="display: none; color:#F6CEE3; text-align: center; font-size: 30px; font-weight: normal;" id="bravo">BRAVO !!! Tu as réussi à trouver les quatres numéros.</h1>
+  <h1 style="display: none; color:#F6CEE3; text-align: center; font-size: 30px; font-weight: normal;" id="coffre">Maintenant cherche à côté de toi un petit sac. Un conseille : ouvre bien les yeux. </br></br>BONNE CHANCE !!!</h1> 
+</body>
+</html>
